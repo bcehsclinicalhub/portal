@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Clinical Hub Portal</title>
-
-  <!-- Favicon -->
   <link rel="icon" href="favicon.png" type="image/png" />
 
   <style>
@@ -19,34 +17,36 @@
     }
 
     .logo {
-      max-width: 200px;
-      margin-bottom: 2rem;
+      max-width: 150px;
+      margin-bottom: 1.5rem;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
       color: #004B8D;
     }
 
     .link-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
       max-width: 900px;
       margin: 0 auto;
+      padding: 0 1rem;
     }
 
     .link-item {
       background-color: white;
       color: #004B8D;
-      padding: 1rem;
+      padding: 0.75rem;
       border-radius: 8px;
       text-decoration: none;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: bold;
+      font-size: 1rem;
       transition: background-color 0.2s ease-in-out;
     }
 
@@ -60,23 +60,35 @@
       margin-right: 0.5rem;
     }
 
-    @media (max-width: 600px) {
-      .link-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .link-item {
+        flex-direction: row;
+        font-size: 0.95rem;
+        padding: 0.6rem;
+      }
+
+      .logo {
+        max-width: 120px;
+        margin-bottom: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo -->
   <img src="hublogo.png" alt="Company Logo" class="logo" />
-
-  <!-- Header -->
   <h1>Clinical Hub Portal</h1>
 
-  <!-- Links Grid -->
   <div class="link-grid">
+    <!-- 12 links with icons -->
     <a href="https://example.com/link1" class="link-item" target="_blank">
       <img src="icons/ambuli.png" alt="Icon 1" />
       Link 1
