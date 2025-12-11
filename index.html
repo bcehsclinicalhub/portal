@@ -16,9 +16,9 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #FFFFFF;
-            color: #333; /* Darker text for better contrast */
+            color: #333; 
             text-align: center;
-            padding: 1rem; /* Reduced default padding */
+            padding: 1rem;
         }
 
         .logo {
@@ -35,29 +35,30 @@
 
         /* --- Fieldset Styling --- */
         fieldset {
-            max-width: 900px;
-            margin: 1.5rem auto; 
-            padding: 1rem;
+            /* Wider on desktop to accommodate 4 columns comfortably */
+            max-width: 1100px; 
+            margin: 2rem auto; 
+            padding: 1.5rem;
             border: 2px solid #004B8D;
             border-radius: 12px;
             text-align: center;
-            background-color: #f9fcff; /* Very subtle background tint */
+            background-color: #f9fcff; 
         }
 
         legend {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: bold;
-            color: #d32f2f; /* Darker red for accessibility */
-            padding: 0 10px;
-            background-color: #fff; /* Ensures legibility over border */
+            color: #d32f2f; 
+            padding: 0 15px;
+            background-color: #fff; 
         }
 
-        /* --- Grid Layout --- */
+        /* --- Grid Layout (Desktop Default) --- */
         .link-grid {
             display: grid;
-            /* Smart wrapping: will fit as many as possible, minimum 140px wide */
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 0.75rem;
+            /* FORCE 4 COLUMNS on Desktop */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem; /* More space between buttons on desktop */
             width: 100%;
         }
 
@@ -65,30 +66,28 @@
         .link-item {
             background-color: white;
             color: #004B8D;
-            padding: 0.75rem 0.5rem;
+            padding: 1rem; /* Generous padding for desktop visibility */
             border-radius: 8px;
             text-decoration: none;
             display: flex;
             align-items: center;
-            justify-content: center; /* Center content */
+            justify-content: center; 
             font-weight: bold;
-            font-size: 0.95rem;
+            font-size: 1rem;
             border: 2px solid #004B8D;
             transition: all 0.2s ease;
-            
-            /* Mobile Friendly Touch Target */
-            min-height: 50px; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            min-height: 60px; 
         }
 
         /* Hover for Desktop */
         .link-item:hover {
             background-color: #dce9f4;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
 
-        /* Active State (Feedback when tapped on mobile) */
+        /* Active State */
         .link-item:active {
             background-color: #004B8D;
             color: white;
@@ -96,14 +95,11 @@
         }
 
         .link-item img {
-            height: 24px; /* Slightly larger icons */
-            width: 24px;
+            height: 28px; 
+            width: 28px;
             object-fit: contain;
-            margin-right: 8px;
+            margin-right: 12px;
         }
-
-        /* Active state for icon to turn white if needed, 
-           or keep as is since they are images */
 
         footer {
             margin-top: 3rem;
@@ -111,50 +107,49 @@
         }
 
         .footer-logo {
-            max-width: 180px;
+            max-width: 200px;
             height: auto;
         }
 
-        /* --- Mobile Optimization --- */
-        @media (max-width: 600px) {
+        /* --- Mobile / Tablet Optimization --- */
+        /* Takes effect when screen is smaller than 768px (standard tablet width) */
+        @media (max-width: 768px) {
             body {
-                padding: 0.5rem; /* Maximize screen real estate */
-            }
-
-            h1 {
-                font-size: 1.4rem;
-                margin-bottom: 1rem;
-            }
-
-            .logo {
-                max-width: 120px;
+                padding: 0.5rem; 
             }
 
             fieldset {
                 margin: 1rem 0;
-                padding: 0.75rem 0.5rem; /* Reduce internal padding */
+                padding: 0.75rem 0.5rem;
             }
 
-            legend {
-                font-size: 1.1rem;
-            }
-
+            /* SWITCH BACK to flexible columns for mobile */
             .link-grid {
-                /* Allows 2 columns on small iPhone SE screens (320px wide) */
+                /* On phones/tablets, fit as many as possible (usually 2 wide) */
                 grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
                 gap: 0.5rem;
             }
 
             .link-item {
-                font-size: 0.85rem;
-                padding: 0.5rem;
-                text-align: left; /* Often easier to read on small screens */
-                justify-content: flex-start; /* Align left */
+                font-size: 0.9rem;
+                padding: 0.6rem;
+                min-height: 50px;
+                justify-content: flex-start; /* Align text left on mobile */
+                text-align: left;
             }
             
             .link-item img {
                 height: 20px;
                 width: 20px;
+                margin-right: 8px;
+            }
+            
+            .logo {
+                max-width: 120px;
+            }
+            
+            .footer-logo {
+                max-width: 150px;
             }
         }
     </style>
@@ -240,51 +235,4 @@
             </a>
 
             <a href="https://view.monday.com/5759586417-cd99d48fb6ea56b5689ec4aac2a510ca?r=use1" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon" />
-                LDOC Diversions
-            </a>
-
-            <a href="https://view.monday.com/5759586417-d2f37e411c66360acf8489f4cb3f0833?r=use1" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon" />
-                Interior Diversions
-            </a>
-
-            <a href="https://view.monday.com/5759586417-ac96846a630b1fba01e9779a72509486?r=use1" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon" />
-                Northern Diversions
-            </a>
-        </div>
-    </fieldset>
-
-    <fieldset>
-        <legend>PS Links Only</legend>
-        <div class="link-grid">
-           
-           <a href="https://pcrportal.bcehs.ca/" class="link-item" target="_blank">
-                <img src="icons/ecg.png" alt="Icon" />
-                Siren Portal
-            </a>
-
-             <a href="https://bcepos.icescape.com/icemanager/#/monitor/users" class="link-item" target="_blank">
-                <img src="icons/doctor.png" alt="Icon" />
-                ICE Anywhere
-            </a>
-
-             <a href="https://care-ca.lifenetsystems.com/login" class="link-item" target="_blank">
-                <img src="icons/ecg.png" alt="Icon" />
-                LifeNet Care
-            </a>
-
-            <a href="https://ca.zollonline.com/Account/Logon" class="link-item" target="_blank">
-                <img src="icons/ecg.png" alt="Icon" />
-                ZOLL Online
-            </a>
-        </div>
-    </fieldset>
-
-    <footer>
-        <img src="BCEHS.png" alt="BCEHS Logo" class="footer-logo" />
-    </footer>
-
-</body>
-</html>
+                <img src="icons/hospital.png" alt="Icon
