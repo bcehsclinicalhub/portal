@@ -7,113 +7,154 @@
     <link rel="icon" href="favicon.png" type="image/png" />
 
     <style>
+        /* 1. Use Border-Box for better sizing logic */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #FFFFFF;
-            color: white;
+            color: #333; /* Darker text for better contrast */
             text-align: center;
-            padding: 2rem;
+            padding: 1rem; /* Reduced default padding */
         }
 
         .logo {
             max-width: 150px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            height: auto;
         }
 
         h1 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            margin: 0 0 1.5rem 0;
             color: #004B8D;
         }
 
-        /* --- New/Modified Styles for Sections and Fieldset --- */
+        /* --- Fieldset Styling --- */
         fieldset {
             max-width: 900px;
-            margin: 2rem auto; /* Adds space between the fieldsets and surrounding content */
+            margin: 1.5rem auto; 
             padding: 1rem;
-            border: 2px solid #004B8D; /* Blue border */
-            border-radius: 10px;
+            border: 2px solid #004B8D;
+            border-radius: 12px;
             text-align: center;
+            background-color: #f9fcff; /* Very subtle background tint */
         }
 
         legend {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: bold;
-            color: #FF0000;
+            color: #d32f2f; /* Darker red for accessibility */
             padding: 0 10px;
+            background-color: #fff; /* Ensures legibility over border */
         }
-        /* -------------------------------------------------- */
 
+        /* --- Grid Layout --- */
         .link-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            /* Smart wrapping: will fit as many as possible, minimum 140px wide */
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.75rem;
+            width: 100%;
         }
 
+        /* --- Link Buttons --- */
         .link-item {
             background-color: white;
             color: #004B8D;
-            padding: 0.75rem;
+            padding: 0.75rem 0.5rem;
             border-radius: 8px;
             text-decoration: none;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: center; /* Center content */
             font-weight: bold;
-            font-size: 1rem;
-            transition: background-color 0.2s ease-in-out;
+            font-size: 0.95rem;
             border: 2px solid #004B8D;
+            transition: all 0.2s ease;
+            
+            /* Mobile Friendly Touch Target */
+            min-height: 50px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
+        /* Hover for Desktop */
         .link-item:hover {
             background-color: #dce9f4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        /* Fix for the icon size issue */
-        .link-item img {
-            height: 20px;
-            width: 20px;
-            max-height: 20px; 
-            max-width: 20px; 
-            margin-right: 0.5rem;
+        /* Active State (Feedback when tapped on mobile) */
+        .link-item:active {
+            background-color: #004B8D;
+            color: white;
+            transform: translateY(0);
         }
+
+        .link-item img {
+            height: 24px; /* Slightly larger icons */
+            width: 24px;
+            object-fit: contain;
+            margin-right: 8px;
+        }
+
+        /* Active state for icon to turn white if needed, 
+           or keep as is since they are images */
 
         footer {
             margin-top: 3rem;
             padding: 1rem 0;
-            background-color: transparent;
         }
 
         .footer-logo {
-            max-width: 200px;
+            max-width: 180px;
+            height: auto;
         }
 
-        @media (max-width: 480px) {
+        /* --- Mobile Optimization --- */
+        @media (max-width: 600px) {
             body {
-                padding: 1rem;
+                padding: 0.5rem; /* Maximize screen real estate */
             }
 
             h1 {
-                font-size: 1.5rem;
-            }
-
-            .link-item {
-                flex-direction: row;
-                font-size: 0.95rem;
-                padding: 0.6rem;
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
             }
 
             .logo {
                 max-width: 120px;
-                margin-bottom: 1rem;
             }
 
-            .footer-logo {
-                max-width: 120px;
+            fieldset {
+                margin: 1rem 0;
+                padding: 0.75rem 0.5rem; /* Reduce internal padding */
+            }
+
+            legend {
+                font-size: 1.1rem;
+            }
+
+            .link-grid {
+                /* Allows 2 columns on small iPhone SE screens (320px wide) */
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                gap: 0.5rem;
+            }
+
+            .link-item {
+                font-size: 0.85rem;
+                padding: 0.5rem;
+                text-align: left; /* Often easier to read on small screens */
+                justify-content: flex-start; /* Align left */
+            }
+            
+            .link-item img {
+                height: 20px;
+                width: 20px;
             }
         }
     </style>
@@ -128,96 +169,88 @@
         <legend>General Hub Links</legend>
         <div class="link-grid">
 
-            
             <a href="https://login.cac1.pure.cloud/?rid=LYzI6MVxm5A25KrLGD8LmPL4EyP3Jr3Y1cKMEcbeFcY#/authenticate-adv/org/bcemergencyhealthservices" class="link-item" target="_blank">
-                <img src="icons/genesys.png" alt="Icon 1" />
-                Geneys Phone
+                <img src="icons/genesys.png" alt="Icon" />
+                Genesys Phone
             </a>
 
-            
             <a href="https://hubschedule.ca" class="link-item" target="_blank">
-                <img src="icons/calendar.png" alt="Icon 1" />
+                <img src="icons/calendar.png" alt="Icon" />
                 Hub Schedule
             </a>
 
             <a href="https://forms.office.com/pages/responsepage.aspx?id=AFLbbw09ikqwNtNoXjWa3CKTeYGPGoBGmh_BbdseXbBUMkw5VkE2NDMwOU80MjVZV0Q1UTdNRjZPUi4u&route=shorturl" class="link-item" target="_blank">
-                <img src="icons/sheets.png" alt="Icon 2" />
+                <img src="icons/sheets.png" alt="Icon" />
                 STC Overtime
             </a>
 
             <a href="https://forms.office.com/pages/responsepage.aspx?id=AFLbbw09ikqwNtNoXjWa3CKTeYGPGoBGmh_BbdseXbBUM0RKT09aOTZNMkZSTjZJTU1GVElSWUUyRy4u&route=shorturl" class="link-item" target="_blank">
-                <img src="icons/sheets.png" alt="Icon 2" />
+                <img src="icons/sheets.png" alt="Icon" />
                 PS Overtime
             </a>
 
             <a href="https://handbook.bcehs.ca/" class="link-item" target="_blank">
-                <img src="icons/book.png" alt="Icon 10" />
+                <img src="icons/book.png" alt="Icon" />
                 Handbook
             </a>
 
             <a href="https://intranet.bcehs.ca/" class="link-item" target="_blank">
-                <img src="icons/internet.png" alt="Icon 10" />
+                <img src="icons/internet.png" alt="Icon" />
                 Intranet
             </a>
 
-            
-
             <a href="https://mts.bcehs.ca/Account/Login?ReturnUrl=%2F" class="link-item" target="_blank">
-                <img src="icons/phone.png" alt="Icon 4" />
+                <img src="icons/phone.png" alt="Icon" />
                 Manchester
             </a>
 
-           
-
             <a href="https://careconnect.healthbc.org/" class="link-item" target="_blank">
-                <img src="icons/record.png" alt="Icon 6" />
+                <img src="icons/record.png" alt="Icon" />
                 CareConnect
             </a>
 
             <a href="https://library.bcehs.ca/index.php" class="link-item" target="_blank">
-                <img src="icons/library.png" alt="Icon 7" />
+                <img src="icons/library.png" alt="Icon" />
                 BCAS Library
             </a>
 
             <a href="https://shop.healthcarebc.ca/phsa/BCEHS" class="link-item" target="_blank">
-                <img src="icons/pdf.png" alt="Icon 8" />
+                <img src="icons/pdf.png" alt="Icon" />
                 BCEHS SHOP
             </a>
 
-           
-
             <a href="https://www.edwaittimes.ca/welcome" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon 10" />
+                <img src="icons/hospital.png" alt="Icon" />
                 Metro Wait Times
             </a>
 
             <a href="https://www.islandhealth.ca/find-care" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon 10" />
+                <img src="icons/hospital.png" alt="Icon" />
                 Island Wait Times
             </a>
 
             <a href="https://bcgov03.maps.arcgis.com/apps/MapSeries/index.html?appid=11821451d60a49168d1f7602d379abf5" class="link-item" target="_blank">
-                <img src="icons/fire.png" alt="Icon 9" />
+                <img src="icons/fire.png" alt="Icon" />
                 BCEM Ops
             </a>
 
              <a href="https://view.monday.com/5759586417-850e8bc4f6d09f975cfe99e01f70a184?r=use1" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon 10" />
+                <img src="icons/hospital.png" alt="Icon" />
                 VDOC Diversions
             </a>
 
             <a href="https://view.monday.com/5759586417-cd99d48fb6ea56b5689ec4aac2a510ca?r=use1" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon 10" />
+                <img src="icons/hospital.png" alt="Icon" />
                 LDOC Diversions
             </a>
 
             <a href="https://view.monday.com/5759586417-d2f37e411c66360acf8489f4cb3f0833?r=use1" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon 10" />
+                <img src="icons/hospital.png" alt="Icon" />
                 Interior Diversions
             </a>
 
             <a href="https://view.monday.com/5759586417-ac96846a630b1fba01e9779a72509486?r=use1" class="link-item" target="_blank">
-                <img src="icons/hospital.png" alt="Icon 10" />
+                <img src="icons/hospital.png" alt="Icon" />
                 Northern Diversions
             </a>
         </div>
@@ -226,24 +259,24 @@
     <fieldset>
         <legend>PS Links Only</legend>
         <div class="link-grid">
-            
+           
            <a href="https://pcrportal.bcehs.ca/" class="link-item" target="_blank">
-                <img src="icons/ecg.png" alt="Icon 4" />
+                <img src="icons/ecg.png" alt="Icon" />
                 Siren Portal
             </a>
 
              <a href="https://bcepos.icescape.com/icemanager/#/monitor/users" class="link-item" target="_blank">
-                <img src="icons/doctor.png" alt="Icon 5" />
+                <img src="icons/doctor.png" alt="Icon" />
                 ICE Anywhere
             </a>
 
              <a href="https://care-ca.lifenetsystems.com/login" class="link-item" target="_blank">
-                <img src="icons/ecg.png" alt="Icon 3" />
+                <img src="icons/ecg.png" alt="Icon" />
                 LifeNet Care
             </a>
 
             <a href="https://ca.zollonline.com/Account/Logon" class="link-item" target="_blank">
-                <img src="icons/ecg.png" alt="Icon 3" />
+                <img src="icons/ecg.png" alt="Icon" />
                 ZOLL Online
             </a>
         </div>
