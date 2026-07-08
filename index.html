@@ -33,67 +33,48 @@
             color: #004B8D;
         }
 
-/* --- Top Featured Button Container (Matches Grid Style) --- */
-.featured-container {
-    max-width: 1100px;
-    margin: 0 auto 1.5rem auto; 
-    padding: 0 1.5rem;
-    width: 100%;
-    display: flex;       
-    justify-content: center; 
-}
+        /* --- Top Featured Button Container (Matches Grid Style) --- */
+        .featured-container {
+            max-width: 1100px;
+            margin: 0 auto 1.5rem auto; 
+            padding: 0 1.5rem;
+            width: 100%;
+            display: flex;       
+            justify-content: center; 
+        }
 
-.featured-button {
-    background-color: white; /* Changed to match grid links */
-    color: #004B8D;          /* Changed to match grid links */
-    padding: 1rem 2rem; 
-    border-radius: 8px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    font-weight: bold;
-    font-size: 1.1rem;      /* Kept slightly larger for hierarchy */
-    border: 2px solid #004B8D;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    min-height: 60px;
-    width: 100%;
-    max-width: 400px;       /* Keeps it from looking too wide */
-}
+        .featured-button {
+            background-color: white; 
+            color: #004B8D;          
+            padding: 1rem 2rem; 
+            border-radius: 8px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            font-weight: bold;
+            font-size: 1.1rem;      
+            border: 2px solid #004B8D;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            min-height: 60px;
+            width: 100%;
+            max-width: 400px;       
+        }
 
-/* Hover State - matches the other grid buttons exactly */
-.featured-button:hover {
-    background-color: #dce9f4;
-    color: #004B8D; /* Ensures text stays blue when hovered */
-    transform: translateY(-3px);
-    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-}
-
-/* Active State (When clicked) */
-.featured-button:active {
-    background-color: #004B8D;
-    color: white;
-    transform: translateY(0);
-}
-
-.featured-button img {
-    height: 28px; 
-    width: 28px;
-    object-fit: contain;
-    margin-right: 12px;
-    /* Removed the brightness filter so your dark/colored icon shows naturally */
-}
-
+        /* Hover State - matches the other grid buttons exactly */
         .featured-button:hover {
-            background-color: #003366;
-            border-color: #003366;
+            background-color: #dce9f4;
+            color: #004B8D; 
+            border-color: #004B8D;
             transform: translateY(-3px);
             box-shadow: 0 6px 8px rgba(0,0,0,0.15);
         }
 
+        /* Active State (When clicked) */
         .featured-button:active {
-            background-color: #002244;
+            background-color: #004B8D;
+            color: white;
             transform: translateY(0);
         }
 
@@ -137,7 +118,7 @@
         .link-item {
             background-color: white;
             color: #004B8D;
-            padding: 1rem; /* Generous padding for desktop visibility */
+            padding: 1rem; 
             border-radius: 8px;
             text-decoration: none;
             display: flex;
@@ -222,7 +203,7 @@
                 font-size: 0.9rem;
                 padding: 0.6rem;
                 min-height: 50px;
-                justify-content: flex-start; /* Align text left on mobile */
+                justify-content: flex-start; 
                 text-align: left;
             }
             
@@ -373,8 +354,6 @@
                 <img src="icons/password.png" alt="Icon" />
                 PHSA ID PASS reset            
             </a>
-
-            
 
             <a href="https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/_djb2_msteams_prefix_2948418785?context=%7B%22channelId%22%3A%2219%3Ae-ESprq2OTJno3Emdq3P4ypKIGlG2O7p7xfArivNQ-01%40thread.tacv2%22%7D&tenantId=6fdb5200-3d0d-4a8a-b036-d3685e359adc" class="link-item" target="_blank">
                 <img src="icons/dashboard.png" alt="Icon" />
