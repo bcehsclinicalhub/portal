@@ -33,11 +33,56 @@
             color: #004B8D;
         }
 
+        /* --- New Top Featured Button Container --- */
+        .featured-container {
+            max-width: 1100px;
+            margin: 0 auto 1rem auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .featured-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #004B8D;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: 2px solid #004B8D;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            min-height: 60px;
+            width: 100%;
+        }
+
+        .featured-button:hover {
+            background-color: #003366;
+            border-color: #003366;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        .featured-button:active {
+            background-color: #002244;
+            transform: translateY(0);
+        }
+
+        .featured-button img {
+            height: 28px; 
+            width: 28px;
+            object-fit: contain;
+            margin-right: 12px;
+        }
+
         /* --- Fieldset Styling --- */
         fieldset {
             /* Wider on desktop to accommodate 4 columns comfortably */
             max-width: 1100px; 
-            margin: 2rem auto; 
+            margin: 1rem auto 2rem auto; 
             padding: 1.5rem;
             border: 2px solid #004B8D;
             border-radius: 12px;
@@ -112,10 +157,28 @@
         }
 
         /* --- Mobile / Tablet Optimization --- */
-        /* Takes effect when screen is smaller than 768px (standard tablet width) */
         @media (max-width: 768px) {
             body {
                 padding: 0.5rem; 
+            }
+
+            .featured-container {
+                padding: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .featured-button {
+                font-size: 1rem;
+                padding: 0.6rem;
+                min-height: 50px;
+                justify-content: flex-start;
+                text-align: left;
+            }
+
+            .featured-button img {
+                height: 20px;
+                width: 20px;
+                margin-right: 8px;
             }
 
             fieldset {
@@ -125,7 +188,6 @@
 
             /* SWITCH BACK to flexible columns for mobile */
             .link-grid {
-                /* On phones/tablets, fit as many as possible (usually 2 wide) */
                 grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
                 gap: 0.5rem;
             }
@@ -159,6 +221,13 @@
 
     <img src="hublogo.png" alt="Company Logo" class="logo" />
     <h1>Clinical Hub Portal</h1>
+
+    <div class="featured-container">
+        <a href="https://tango.bcehsclinicalhub.ca/" class="featured-button" target="_blank">
+            <img src="icons/internet.png" alt="Icon" />
+            Hub Wiki
+        </a>
+    </div>
 
     <fieldset>
         <legend>General Hub Links</legend>
@@ -204,7 +273,6 @@
                 CareConnect :: PHSABC\user.name
             </a>
             
-            
             <a href="https://library.bcehs.ca/index.php" class="link-item" target="_blank">
                 <img src="icons/library.png" alt="Icon" />
                 BCAS Library
@@ -225,8 +293,7 @@
                 Island Wait Times
             </a>
 
-
-             <a href="https://view.monday.com/5759586417-850e8bc4f6d09f975cfe99e01f70a184?r=use1" class="link-item" target="_blank">
+            <a href="https://view.monday.com/5759586417-850e8bc4f6d09f975cfe99e01f70a184?r=use1" class="link-item" target="_blank">
                 <img src="icons/hospital.png" alt="Icon" />
                 VDOC Diversions
             </a>
@@ -246,24 +313,22 @@
                 Northern Diversions
             </a>
 
-        <a href="https://bcemcop-bcgov03.hub.arcgis.com/pages/emergency-management-dashboard" class="link-item" target="_blank">
+            <a href="https://bcemcop-bcgov03.hub.arcgis.com/pages/emergency-management-dashboard" class="link-item" target="_blank">
                 <img src="icons/fire.png" alt="Icon" />
                 BC EMCOP
             </a>
 
-            </a>
-
-        <a href="http://www.dpic.org/" class="link-item" target="_blank">
+            <a href="http://www.dpic.org/" class="link-item" target="_blank">
                 <img src="icons/poison.png" alt="Icon" />
                 DPIC
             </a>
 
-            </a>
-        <a href="https://www.bccdc.ca/" class="link-item" target="_blank">
+            <a href="https://www.bccdc.ca/" class="link-item" target="_blank">
                 <img src="icons/bccdc.jpg" alt="Icon" />
                 BCCDC
             </a>
-        <a href="https://www.cdc.gov/index.html" class="link-item" target="_blank">
+
+            <a href="https://www.cdc.gov/index.html" class="link-item" target="_blank">
                 <img src="icons/cdc.png" alt="Icon" />
                 USCDC
             </a>
@@ -288,8 +353,6 @@
                 STC/ LAPN Dashboard
             </a>
             
-
-            
         </div>
     </fieldset>
 
@@ -307,7 +370,6 @@
                 ICE Anywhere
             </a>
 
-            
             <a href="https://prd-ptms.bcehs.ca/" class="link-item" target="_blank">
                 <img src="icons/library.png" alt="Icon" />
                 PTMS | PTN Notes
