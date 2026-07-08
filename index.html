@@ -34,30 +34,34 @@
         }
 
         /* --- New Top Featured Button Container --- */
-        .featured-container {
-            max-width: 1100px;
-            margin: 0 auto 1rem auto;
-            padding: 0 1.5rem;
-            width: 100%;
-        }
+        /* --- New Top Featured Button Container --- */
+.featured-container {
+    max-width: 1100px;
+    margin: 0 auto 1.5rem auto; /* Added slightly more space below the bar */
+    padding: 0 1.5rem;
+    width: 100%;
+    display: flex;       /* Added to handle alignment */
+    justify-content: center; /* Centers the button within the container */
+}
 
-        .featured-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #004B8D;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            border: 2px solid #004B8D;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            min-height: 60px;
-            width: 100%;
-        }
+.featured-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #004B8D;
+    color: white;
+    padding: 1rem 2rem; /* Added horizontal padding */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid #004B8D;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-height: 60px;
+    width: 100%;
+    max-width: 400px; /* LIMITS THE WIDTH to match roughly 1-2 grid columns */
+}
 
         .featured-button:hover {
             background-color: #003366;
