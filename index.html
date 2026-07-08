@@ -33,33 +33,55 @@
             color: #004B8D;
         }
 
-        /* --- New Top Featured Button Container --- */
+/* --- Top Featured Button Container (Matches Grid Style) --- */
 .featured-container {
     max-width: 1100px;
-    margin: 0 auto 1.5rem auto; /* Added slightly more space below the bar */
+    margin: 0 auto 1.5rem auto; 
     padding: 0 1.5rem;
     width: 100%;
-    display: flex;       /* Added to handle alignment */
-    justify-content: center; /* Centers the button within the container */
+    display: flex;       
+    justify-content: center; 
 }
 
 .featured-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #004B8D;
-    color: white;
-    padding: 1rem 2rem; /* Added horizontal padding */
+    background-color: white; /* Changed to match grid links */
+    color: #004B8D;          /* Changed to match grid links */
+    padding: 1rem 2rem; 
     border-radius: 8px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1.1rem;      /* Kept slightly larger for hierarchy */
     border: 2px solid #004B8D;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     min-height: 60px;
     width: 100%;
-    max-width: 400px; /* LIMITS THE WIDTH to match roughly 1-2 grid columns */
+    max-width: 400px;       /* Keeps it from looking too wide */
+}
+
+/* Hover State - matches the rest of the site */
+.featured-button:hover {
+    background-color: #dce9f4;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+/* Active State */
+.featured-button:active {
+    background-color: #004B8D;
+    color: white;
+    transform: translateY(0);
+}
+
+.featured-button img {
+    height: 28px; 
+    width: 28px;
+    object-fit: contain;
+    margin-right: 12px;
+    /* Removed the brightness filter so your dark/colored icon shows naturally */
 }
 
         .featured-button:hover {
@@ -336,6 +358,11 @@
                 USCDC
             </a>
 
+            <a href="https://www.uberhealth.com/ca/en/?uclick_id=c13e8ce5-7078-4626-b1c2-21d6e7819a2e&marketing_vistor_id=b64a790a-37f7-4746-acea-2c892bddba27" class="link-item" target="_blank">
+                <img src="icons/soon.png" alt="Icon" />
+                Uber Health {coming soon}
+            </a>
+            
             <a href="https://console.icabbicanada.com" class="link-item" target="_blank">
                 <img src="icons/taxi.png" alt="Icon" />
                 iCabbi
@@ -346,10 +373,7 @@
                 PHSA ID PASS reset            
             </a>
 
-            <a href="https://tango.bcehsclinicalhub.ca/" class="link-item" target="_blank">
-                <img src="icons/soon.png" alt="Icon" />
-                Hub Wiki {Beta}
-            </a>
+            
 
             <a href="https://teams.microsoft.com/l/entity/1c4340de-2a85-40e5-8eb0-4f295368978b/_djb2_msteams_prefix_2948418785?context=%7B%22channelId%22%3A%2219%3Ae-ESprq2OTJno3Emdq3P4ypKIGlG2O7p7xfArivNQ-01%40thread.tacv2%22%7D&tenantId=6fdb5200-3d0d-4a8a-b036-d3685e359adc" class="link-item" target="_blank">
                 <img src="icons/dashboard.png" alt="Icon" />
